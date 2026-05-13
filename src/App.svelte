@@ -32,6 +32,7 @@
 
     for (const key of Object.keys(items)) {
       const item = items[key];
+      if (!item.photo?.thumb || !item.photo?.original) continue;
       const row = [
         escapeCSV(item.id ?? ''),
         escapeCSV(item.message ?? ''),
